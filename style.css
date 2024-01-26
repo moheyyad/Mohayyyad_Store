@@ -246,13 +246,76 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.7), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 
 
 
+
 /* intro */
+
 .layerTop{
   position: fixed;
   top: 50%;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #000;
+  background: var(--y);
   z-index: 999999;
+  animation: 1s top;
+  animation-fill-mode: forwards;
+  animation-delay: .8s;
+}
+
+.layerBottom{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  background: var(--y);
+  z-index: 999999;
+  animation: 1s bottom;
+  animation-fill-mode: forwards;
+  animation-delay: .8s;
+
+}
+
+.layerCenter{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: var(--x);
+  font-size: 24px;
+  font-weight: bold;
+  z-index: 999999999;
+  animation: 1s center;
+  animation-fill-mode: forwards;
+  animation-delay: .8s;
+}
+
+@keyframes top{
+  from{
+    top: 50%;
+  }
+  to{
+    opacity: 0;
+    top: 100%;
+  }
+}
+
+@keyframes bottom{
+  from{
+    bottom: 50%;
+  }
+  to{
+    opacity: 0;
+    bottom: 100%;
+  }
+}
+
+@keyframes center{
+  from{
+    display: block;
+  }
+  to{
+    opacity: 0;
+    display: none;
+  }
 }
